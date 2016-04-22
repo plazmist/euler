@@ -38,11 +38,6 @@ int isPalindromBin(int someVal)
 		digits++;
 		tmp/=2;
 	}
-	/*printf("WTF! = ");
-	for (int i = digits-1; i >=0; --i)
-	{
-		printf("%d",Digit[i]);
-	}*/
 	while ( (cnt <= digits/2) && (Digit[cnt] == Digit[digits-cnt-1]))  cnt++;
 	if (cnt >= digits/2) return 1; //yes, it is Palimdrom
 		return 0; // NO!
