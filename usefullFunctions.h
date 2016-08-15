@@ -2,6 +2,7 @@
 
 int isPrime(unsigned long someVal)
 {
+	if (someVal < 2) return 0;
 	unsigned long newDiv=2;
 	while (someVal % newDiv != 0)
 		newDiv++;
