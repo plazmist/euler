@@ -16,7 +16,7 @@ What is the value of the first triangle number to have over five hundred divisor
 #include <stdio.h>
 #include <stdlib.h>
 
-#define count 200000
+#define count 20
 
 int Dividors(unsigned long Val)
 {
@@ -29,23 +29,29 @@ int Dividors(unsigned long Val)
 
 int main(int argc, char const *argv[])
 {
-	unsigned long Sum;
-	int cnt1=200000;
+	unsigned long Sum=0;
+	int cnt1=20;
 	int cnt2=400000;
-	
-	for (int i = 0; i<cnt1; ++i)
+	int div;
+	// 5983 - 17901136: 80
+	// 5984 - 17907120: 480
+	Sum = 17877210;
+	for (int i = 5980; ; ++i)
 		{
 			Sum+=i;
+			div = Dividors(Sum);
+			printf("%d - %ld: %d\n", i, Sum, div);
+			if ( div >= 500 ) return 0;
 			//if (Dividors(Sum)>500){
-				printf("+%d = %ld: \n",i,Sum);
+				//printf("+%d = %ld: \n",i,Sum);
 				//printf("%ld: %d\n",Sum, Dividors(Sum));
 			//	return 0;
 		//	}
 		}	
-	for (int i = cnt1; i < cnt2; ++i)
+/*	for (int i = cnt1; i < cnt2; ++i)
 	{
 		Sum+=i;
 		printf("+%d = %ld: %d\n",i,Sum, Dividors(Sum));
-	}
+	}*/
 	return 0;
 }

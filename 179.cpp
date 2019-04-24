@@ -4,8 +4,8 @@
 
 int dividors(int n){
 	int cnt = 2;
-	for (int i = 2; i < n/2; ++i)
-		if (n % i == 0) cnt++;
+	for (int i = 2; i <= n/2; ++i)
+		if (n % i == 0) { cnt++;}
 	return cnt;
 }
 
@@ -14,7 +14,7 @@ int main(){
 	int d1 = 0;
 	int d2 = 0;
 	int cnt = 0;
-	for (int i = 0; i < 10000000; ++i)
+	for (int i = 2; i < 10000000; ++i)
 	{
 		d1 = d2;
 		d2 = dividors(i);
